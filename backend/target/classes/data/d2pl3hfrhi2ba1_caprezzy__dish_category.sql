@@ -1,0 +1,14 @@
+INSERT INTO caprezzy._dish_category (dish_uid, category_uid) VALUES (73, 22);
+INSERT INTO caprezzy._dish_category (dish_uid, category_uid) VALUES (4, 4);
+INSERT INTO caprezzy._dish_category (dish_uid, category_uid) VALUES (74, 6);
+INSERT INTO caprezzy._dish_category (dish_uid, category_uid) VALUES (75, 23);
+INSERT INTO caprezzy._dish_category (dish_uid, category_uid) VALUES (76, 1);
+INSERT INTO caprezzy._dish_category (dish_uid, category_uid) VALUES (65, 23);
+INSERT INTO caprezzy._dish_category (dish_uid, category_uid) VALUES (2, 2);
+INSERT INTO caprezzy._dish_category (dish_uid, category_uid) VALUES (66, 23);
+INSERT INTO caprezzy._dish_category (dish_uid, category_uid) VALUES (68, 22);
+INSERT INTO caprezzy._dish_category (dish_uid, category_uid) VALUES (67, 22);
+INSERT INTO caprezzy._dish_category (dish_uid, category_uid) VALUES (69, 22);
+INSERT INTO caprezzy._dish_category (dish_uid, category_uid) VALUES (70, 2);
+INSERT INTO caprezzy._dish_category (dish_uid, category_uid) VALUES (71, 3);
+INSERT INTO caprezzy._dish_category (dish_uid, category_uid) VALUES (72, 3);

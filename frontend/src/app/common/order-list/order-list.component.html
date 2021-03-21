@@ -1,0 +1,36 @@
+<mat-button-toggle-group #group="matButtonToggleGroup" multiple class="group">
+  <mat-button-toggle value="in_check" (change)="changeStateList($event.source)" class="butt">
+    Нові
+  </mat-button-toggle>
+  <mat-button-toggle value="confirmed" (change)="changeStateList($event.source)" class="butt">
+    Підтверджені
+  </mat-button-toggle>
+  <mat-button-toggle value="in_progress" (change)="changeStateList($event.source)" class="butt">
+    Готуються
+  </mat-button-toggle>
+  <mat-button-toggle value="ready" (change)="changeStateList($event.source)" class="butt">
+    Готові
+  </mat-button-toggle>
+  <mat-button-toggle value="took_away" (change)="changeStateList($event.source)" class="butt">
+    Виконані
+  </mat-button-toggle>
+  <mat-button-toggle value="cancelled" (change)="changeStateList($event.source)" class="butt">
+    Скасовані
+  </mat-button-toggle>
+
+
+  <mat-paginator
+    [length]="allOrdersCount"
+    [pageSize]="pageFilter.size"
+    [pageSizeOptions]="pageSizeOptions"
+    [pageIndex]="pageFilter.page"
+    (page)="pageEvent($event)">
+  </mat-paginator>
+</mat-button-toggle-group>
+
+
+<div class="list-center" style="margin: auto; left: 0; right: 0;">
+  <app-order-info-card *ngFor="let order of orders" (orderChanged)="processOrderChanged($event)"
+    [order]="order"
+  ></app-order-info-card>
+</div>

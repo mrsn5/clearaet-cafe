@@ -1,0 +1,24 @@
+<div>
+  <div class="card">
+    <h1 class="header">Замовлення №{{id}} прийнято!</h1>
+
+    <p class="text">Наш оператор перегляне Ваше замовлення і за необхідності передзвонить Вам.</p>
+
+    <p>Коли замовлення буде оброблене, Вам прийде повідомлення на скриньку.</p>
+
+    <div  class="card-body">
+      <div *ngIf="card">
+        <p>Щоб оплатити замовленя натисни сюди</p>
+        <div id='liqpay' [innerHTML]="liqpayHtml | sanitizeHtml"></div>
+      </div>
+
+      <div style="margin-top: 20px">
+      <button class="pay-choice main-bg" mat-flat-button style="width: 100%" routerLink="/history">Переглянути замовлення</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

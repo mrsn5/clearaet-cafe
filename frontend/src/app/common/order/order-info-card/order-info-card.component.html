@@ -1,0 +1,40 @@
+<mat-card class="order-card">
+  <mat-card-title class="title">
+    <span class="subtitle">Замовлення №{{order.uid}}</span>
+    <span class="status">{{getStatus()}}</span>
+  </mat-card-title>
+  <mat-card-subtitle>
+    {{order.orderTime | date: 'dd/MM hh:mm':'+0300'}} <br>
+    Бажаний час готовності {{order.readyTime | date: 'dd/MM hh:mm':'+0300'}} <br>
+    {{order.total}} грн, {{getPaymentState()}}
+  </mat-card-subtitle>
+  <mat-card-content>
+
+    <div class="list">
+      <app-portions
+        [portions]="order.portions"
+        [prefs]="order.preferences"
+        style="flex-grow: 2;"
+      ></app-portions>
+
+      <app-client-info
+        [client]="order.client"
+        style="flex-grow: 1; flex-basis: 100px;"
+      ></app-client-info>
+    </div>
+
+    <div class="actions">
+      <ng-template appOnlyForAdmin>
+        <button mat-flat-button class="main-bg" *ngIf="canBeConfirmed()" (click)="confirm()">Підтвердити</button>
+        <button mat-flat-button class="main-bg" *ngIf="canBeConfirmed()" (click)="changeContents()">Змінити</button>
+        <button mat-stroked-button *ngIf="canBeSetInProgress()" (click)="cooking()">Готується</button>
+        <button mat-flat-button class="main-bg" *ngIf="canBeSetReady()" (click)="ready()">Готово</button>
+        <button mat-flat-button class="main-bg" *ngIf="canBeDone()" (click)="done()">Забрано <span *ngIf="!isPaid()">та оплачено</span></button>
+        <button mat-flat-button class="contract-bg" *ngIf="canBeCancelled()" (click)="cancel()">Скасувати</button>  
+      </ng-template>
+      <ng-template appOnlyForClient>
+        <button mat-flat-button class="main-bg" (click)="redo()">Повторити</button>
+      </ng-template>
+    </div>
+  </mat-card-content>
+</mat-card>

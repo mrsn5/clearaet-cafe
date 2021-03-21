@@ -1,0 +1,23 @@
+<mat-card class="portions-card">
+  <mat-card-title>Порції:</mat-card-title>
+  <mat-card-content>
+    <ul>
+      <li class="item" *ngFor="let p of portions">
+        <div class="item-info">
+
+          <div class="box-{{p.uid}} text">
+            <span class="name">{{p.dish.name}}</span><br/>
+          </div>
+        </div>
+        <span class="quantity">{{p.quantity}}</span>
+        <span class="price">{{ p.price }} грн</span>
+      </li>
+
+    </ul>
+
+    <div *ngIf="prefs">
+      Побажання:
+      <p class="prefs">{{prefs}}</p>
+    </div>
+  </mat-card-content>
+</mat-card>

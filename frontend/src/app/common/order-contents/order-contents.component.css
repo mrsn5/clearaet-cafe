@@ -1,0 +1,18 @@
+.modal-header {
+    height: 60px;
+}
+.dishes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: flex-start;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    flex-flow: flex-wrap;
+    max-height: 500px;
+    overflow-y: auto; 
+}
+.dish {
+    margin: 10px 10px;
+}

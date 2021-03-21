@@ -1,0 +1,44 @@
+<div class="home-page">
+
+
+  <div id="menu-container">
+
+
+      <div *ngIf='filterShown' id="filtersBar" style="padding-right: 10px">
+        <button class="btn btn-primary addButton main-bg" style="width: 100%" type='button' (click)="switchFilters()">
+          Сховати
+        </button>
+
+        <mat-selection-list class="noselect" style="outline: none;" class="categories-aside" (selectionChange)="categoriesChanged($event)">
+          <mat-list-option   class="noselect" [value]="cat.uid" *ngFor="let cat of categories">
+            {{cat.name}}
+          </mat-list-option>
+          <hr/>
+        </mat-selection-list>
+
+
+        <div class="filters-panel" style="padding: 10px">
+          <ingredients
+            [allIngredients]="ingredients"
+            (selectionChanged)="ingredientsChanged($event)">
+          </ingredients>
+        </div>
+      </div>
+
+
+    <button *ngIf="!filterShown" mat-mini-fab class='main-bg filter-butt' type='button' (click)="switchFilters()">
+      <mat-icon>filter_list</mat-icon>
+    </button>
+
+    <div class="menu">
+      <dish class="dish" *ngFor="let dish of (dishes$ | async)"
+        [dish]="dish"
+        [ordered]="getOrdered(dish.uid)"
+        (orderedChange)="setOrdered(dish, $event)"
+        (deleteHandler)="delete(dish)"
+      ></dish>
+<!--      <div class="dish" style="flex-grow: 100; visibility: hidden; min-width: 300px"></div>-->
+    </div>
+  </div>
+</div>
+

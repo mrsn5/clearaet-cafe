@@ -1,0 +1,72 @@
+.portions-card {
+  /*margin: 8px;*/
+  height: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li{
+  text-align: left;
+}
+
+
+.content div{
+  display: inline-block;
+}
+
+.item {
+  display: flex;
+  padding-top: 8px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.item-info {
+  display: inline-block;
+  /*min-width: 220px;*/
+  vertical-align: middle;
+  flex-basis: 50%;
+  flex-grow: 3;
+}
+
+.name {
+  word-wrap: break-word;
+
+}
+
+.quantity {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: right;
+  margin-top: auto;
+  margin-bottom: auto;
+  /*min-width: 20px;*/
+  flex-basis: 25%;
+  flex-grow: 1;
+  font-style: italic;
+  color: #7f7f7f;
+}
+
+.price {
+  display: inline-block;
+  text-align: right;
+  margin-top: auto;
+  margin-bottom: auto;
+  /*min-width: 90px;*/
+  flex-basis: 25%;
+  flex-grow: 2;
+}
+
+
+.text {
+  display: inline-block;
+}
+
+.prefs {
+  font-style: italic;
+  color: #7f7f7f;
+  padding-left: 20px;
+}

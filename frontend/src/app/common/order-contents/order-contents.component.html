@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Редагування складу замовлення #{{ orderId }}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="dishes">
+        <dish class="dish"
+            *ngFor="let dish of OrderedDishes"
+            [ordered]="getOrdered(dish.uid)"
+            [dish]="dish"
+            (orderedChange)="setOrdered(dish, $event)"
+            [displayMode]="displayMode">
+        </dish>
+    </div>    
+</div>
+<div class="modal-footer">
+    <button type="button" mat-flat-button class="pull-right" (click)="save()" [disabled]="!CanSave">
+        Зберегти
+    </button>
+</div>

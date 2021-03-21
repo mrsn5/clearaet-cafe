@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+button:focus, button {outline:none !important;}
+
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+.main-bg, .mat-step-icon-state-edit {
+  color: white;
+  background-color: #555877 !important;
+}
+
+.contract-bg, .mat-step-icon-selected {
+  color: white;
+  background-color:#9FA2C4 !important;
+}
+
+.mat-card-header-text {
+  margin-right: 0px !important;
+}
+
+.mat-accent .mat-pseudo-checkbox-checked, .mat-accent .mat-pseudo-checkbox-indeterminate, .mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate {
+  background-color:#9FA2C4 !important;
+}
+@media (min-width: 576px){
+  .modal-dialog {
+    max-width: 700px;
+  }
+}

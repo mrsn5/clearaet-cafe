@@ -1,0 +1,88 @@
+<ng-container [ngSwitch]="displayMode" class="card-cont">
+  <mat-card *ngSwitchCase="DishDisplayMode.Compact" class="dish-card">
+    <mat-card-header>
+    <div mat-card-avatar class="avatar" [style.background-image]="backgroundImage"></div>
+    <mat-card-title style="font-style: normal; font-size: 20px; font-weight: normal">
+      {{dish.name}}
+
+      <div class="counter" *ngIf="dish.isAvailable" style="margin-top: 15px">
+        <button class="quantity-arrow-minus contract-bg" (click)="minusOrdered()"> - </button>
+        <input
+          [value]="ordered"
+          (input)="ordered = $event.target.value; orderedChange.emit(ordered)"
+          matInput type="number" placeholder="Ex. 12" min="0" class="number">
+        <button class="quantity-arrow-plus contract-bg"(click)="plusOrdered()"> + </button>
+      </div>
+    </mat-card-title>
+
+    </mat-card-header>
+  <mat-card-actions>
+
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card *ngSwitchCase="DishDisplayMode.Full" class="dish-card mat-card {{dish.isAvailable ? '' : 'hidden-card'}}">
+   <ng-template appOnlyForAdmin>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="edit()">
+        <mat-icon>edit</mat-icon>
+        <span>Редагувати</span>
+      </button>
+      <button mat-menu-item *ngIf="dish.isAvailable" (click)="hide()">
+        <mat-icon>visibility_off</mat-icon>
+        <span>Сховати</span>
+      </button>
+
+      <button mat-menu-item *ngIf="!dish.isAvailable" (click)="show()">
+        <mat-icon>visibility</mat-icon>
+        <span>Показати</span>
+      </button>
+
+      <button mat-menu-item (click)="delete()">
+        <mat-icon>delete</mat-icon>
+        <span>Видалити</span>
+      </button>
+    </mat-menu>
+   </ng-template>
+
+
+    <div class="header">
+    <mat-card-title class="dish-name"> {{dish.name}} </mat-card-title>
+    <mat-card-subtitle>{{ dish.price }} грн, {{dish.weight}} {{unit}}</mat-card-subtitle>
+    </div>
+    <img mat-card-image src={{dish.photo}} alt="Photo of a Shiba Inu">
+
+
+    <mat-card-content>
+      <p class='ings'>
+        {{contents}}
+      </p>
+
+
+    <div>
+      <div class="counter" *ngIf="dish.isAvailable">
+        <button class="quantity-arrow-minus contract-bg" (click)="minusOrdered()"> – </button>
+        <input class="number"
+          [value]="ordered"
+          (input)="processNumberInput($event)"
+          matInput type="number" placeholder="Ex. 12" min="0">
+        <button class="quantity-arrow-plus contract-bg"(click)="plusOrdered()"> + </button>
+      </div>
+    </div>
+
+    </mat-card-content>
+
+
+    <div class="foot-cont">
+      <mat-card-footer style="margin: -16px 0">
+        <div class="footer">
+          {{categories}}
+        </div>
+      </mat-card-footer>
+    </div>
+  </mat-card>
+
+</ng-container>

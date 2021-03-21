@@ -1,0 +1,66 @@
+<mat-card>
+<mat-horizontal-stepper [linear]="true" #stepper>
+    <mat-step>
+        <ng-template matStepLabel>Позиції</ng-template>
+
+      <div style="margin: auto; left: 0; right: 0; width: 300px">
+      <dish
+            *ngFor="let dish of orderedDishes"
+            [ordered]="getOrdered(dish.uid)"
+            [dish]="dish"
+            (orderedChange)="setOrdered(dish, $event)"
+            [displayMode]="displayMode">
+      </dish>
+      </div>
+
+        <ng-container *ngIf=" orderState.defined()">
+          <div class="sum" style="text-align: center">
+            Загальна сума: <b>{{ orderState.total() }} грн</b>
+          </div>
+          <div>
+            <button mat-button matStepperNext style="width: 100%" class="main-bg">Далі</button>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="!orderState.defined()">
+          Ваше замовлення пусте.
+          Додайте страви у <a href="/#">меню</a> або повторіть якесь з <a href="/#/history">історії</a>
+        </ng-container>
+    </mat-step>
+
+    <mat-step [stepControl]="preferForm">
+        <form [formGroup]="preferForm">
+            <ng-template matStepLabel>Побажання</ng-template>
+            <mat-form-field style="width: 100%">
+              <mat-label>Ваші побажання:</mat-label>
+              <input matInput formControlName="prefs">
+            </mat-form-field>
+            <mat-form-field style="width: 100%">
+              <mat-label>Буде виконано {{ReadyDate}} о: </mat-label>
+              <input  type="time"
+                      value="{{ DefaultReadyTime }}" 
+                      min="{{ DefaultReadyTime }}" 
+                      max="23:00" 
+                      matInput 
+                      formControlName="prefTime"/>
+            </mat-form-field>  
+            <div style="display: flex; align-content: space-between">
+              <button mat-button matStepperPrevious style="flex-grow: 1; margin-right: 5px" class="contract-bg">Назад</button>
+              <button mat-button matStepperNext style="flex-grow: 1; margin-left: 5px" class="main-bg">Далі</button>
+            </div>
+          </form>
+    </mat-step>
+    <mat-step>
+          <ng-template matStepLabel>Оплата</ng-template>
+          <div style="display: flex; flex-wrap: wrap">
+            <button class="pay-choice main-bg" mat-flat-button style="width: 100%; margin-bottom: 10px" (click)="confirm(true)">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              Оплатити картою зараз
+            </button>
+            <button class="pay-choice main-bg" mat-flat-button style="width: 100%" (click)="confirm()">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              Оплатити при отриманні
+            </button>
+          </div>
+      </mat-step>
+  </mat-horizontal-stepper>
+</mat-card>

@@ -1,0 +1,88 @@
+<div class="col-md-6 offset-md-3 mt-5">
+  <div class="card">
+    <h4 class="card-header">Реєстрація</h4>
+    <div class="card-body">
+      <form class="form" name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm"
+            [mustMatch]="['password', 'confirmPassword']" novalidate
+            >
+
+
+        <div class="form-group">
+          <label for="fullName">Повне ім'я</label>
+          <input class="form-control"
+                 type="text"
+                 name="fullName"
+                 [(ngModel)]="user.fullName"
+                 #fullName="ngModel"
+                 [ngClass]="{ 'is-invalid': f.submitted && fullName.invalid }"
+                 required/>
+          <div *ngIf="f.submitted && fullName.invalid" class="invalid-feedback">
+            <div *ngIf="fullName.errors.required">Ім'я обов'язкове поле</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Пошта</label>
+          <input class="form-control"
+                 type="text"
+                 name="email"
+                 [(ngModel)]="user.mail"
+                 #email="ngModel"
+                 [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
+                 required
+                 email/>
+          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+            <div *ngIf="email.errors.required">Пошта обов'язкове поле</div>
+            <div *ngIf="email.errors.email">Пошта має бути валідною</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Пароль</label>
+          <input class="form-control"
+                 type="password"
+                 name="password"
+                 [(ngModel)]="user.password"
+                 #password="ngModel"
+                 [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+                 required
+                 minlength="8"/>
+          <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+            <div *ngIf="password.errors.required">Пароль обов'язкове поле</div>
+            <div *ngIf="password.errors.minlength">Пароль має бути хочаб 8 символів</div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <input class="form-control"
+                 type="tel"
+                 name="phone"
+                 [(ngModel)]="user.phone"
+                 #phone="ngModel"
+                 [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }"
+                 required
+                 minlength="10"
+                 maxlength="20"/>
+          <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
+            <div *ngIf="phone.errors.required">Телефон обов'язкове поле</div>
+            <div *ngIf="phone.errors.minlength">Телефон повинен складатися з 10 цифр</div>
+            <div *ngIf="phone.errors.maxlength">Телефон занадто довгий</div>
+          </div>
+        </div>
+
+
+        <div>
+          <p style="text-align: center">Вже маєш аккаунт? <a routerLink="/login">Заходь сюди!</a></p>
+        </div>
+
+        <button [disabled]="loading" class="btn btn-primary main-bg" style="width: 100%">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Register
+        </button>
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+      </form>
+    </div>
+  </div>
+</div>

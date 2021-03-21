@@ -1,0 +1,132 @@
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.dish-name {
+  padding-right: 20px;
+}
+
+.hidden-card {
+  opacity: 0.5;
+}
+
+.dish-card {
+  left:0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  height: 100%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  max-height: 400px;
+}
+mat-card-title ::ng-deep * {
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+img {
+    object-fit: cover; /*this makes the image in src fit to the size specified below*/
+    /*width: 100%; !* Here you can use wherever you want to specify the width and also the height of the <img>*!*/
+    height: 150px;
+}
+.card-cont {
+  margin-bottom: 10px;
+}
+.foot-cont {
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.footer {
+  color: white;
+    padding: 10px;
+    background-color: #70739a;
+  border-radius: 4px;
+}
+.avatar {
+  width: 80px;
+  height: 80px;
+    background-size: cover;
+}
+
+
+/* Для Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  text-align:center;
+}
+/* Для Firefox */
+input[type=number]{
+  -moz-appearance: textfield;
+  text-align:center;
+}
+
+.counter {
+  display: flex;
+}
+
+.quantity-arrow-minus, .quantity-arrow-plus {
+  max-width: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  max-height: 30px;
+  display: inline-block;
+  border-radius: 4px;
+  /*background-color: #70739a;*/
+  color: white;
+  border-color: transparent;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  text-align: center;
+}
+
+/*.quantity-arrow-minus {*/
+/*  margin-left: 50px;*/
+/*}*/
+
+/*.quantity-arrow-plus{*/
+/*  margin-right: 50px;*/
+/*}*/
+
+.ings {
+  color: #7f7f7f;
+  font-style: italic;
+  display: block;
+  height: 50px;
+}
+
+.header {
+  display: block;
+  height: 65px;
+}
+
+.number {
+  /*width: 100px;*/
+  font-size: 20px;
+  color: #7f7f7f;
+}
+
+.mat-input-element {
+  font: inherit;
+  background: 0 0;
+  color: currentColor;
+  border: none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  vertical-align: bottom;
+  text-align: inherit;
+}

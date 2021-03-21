@@ -1,0 +1,45 @@
+
+
+<nav class="navbar navbar-expand">
+  <div>
+    <img class='logo' src="../assets/logoClearEat.png" routerLink="/" style="cursor: pointer"/>
+    <a class="cart" routerLink="/order">
+      <mat-icon style="font-size: 30px">
+        shopping_cart
+      </mat-icon>
+
+      <span class="cart-badge"> {{ orderedAmount$ | async }} </span>
+    </a>
+
+  </div>
+
+
+  <div class="navbar-nav">
+    <button mat-mini-fab class='main-bg menu-butt big' type='button' (click)="triggerMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+
+
+    <a class="nav-item nav-link small-sc" routerLink="/">Головна</a>
+    <ng-template appOnlyForAdmin>
+      <a class="nav-item nav-link small-sc" routerLink="/admin">Замовлення</a>
+      <a class="nav-item nav-link small-sc" routerLink="/add">Додати</a>
+    </ng-template>
+    <ng-template appOnlyForClient>
+      <a class="nav-item nav-link small-sc" routerLink="/history">Історія</a>
+    </ng-template>
+
+    <div style="flex-grow: 100"></div>
+
+    <a *ngIf="currentUser" class="nav-item nav-link small-sc" style="margin-right: 20px"><i>Вiтаю, {{currentUser.fullName}}!</i></a>
+    <a *ngIf="!currentUser" class="nav-item nav-link small-sc" routerLink="/login">Увійти</a>
+    <a *ngIf="!currentUser" class="nav-item nav-link small-sc" routerLink="/register">Реєстрація</a>
+    <a *ngIf="currentUser" class="nav-item nav-link small-sc" style="cursor: pointer" (click)="logout()">Вийти</a>
+  </div>
+</nav>
+
+<!-- main app container -->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

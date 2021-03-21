@@ -1,0 +1,12 @@
+.contacts {
+    display: flex;
+    flex-direction: column;
+}
+.sum {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.pay-choice {
+    margin: 0 20px;
+}

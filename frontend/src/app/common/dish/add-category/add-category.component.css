@@ -1,0 +1,22 @@
+table, .addButton{
+  width: 100%;
+}
+
+table {
+  font-size: 18px;
+}
+
+.card-margin {
+  margin: 13px;
+}
+
+.nested-card {
+  padding: 13px;
+}
+
+.card {
+  max-width: 700px;
+  margin: 13px auto;
+  left: 0;
+  right: 0;
+}

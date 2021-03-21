@@ -1,0 +1,52 @@
+.menu {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.dish {
+    /*flex: 0 1 24%;*/
+  flex-grow: 1;
+  margin-bottom: 30px;
+  margin-right: 4px;
+}
+#menu-container {
+  /*transition: display .5s;*/
+  display: flex;
+  flex-direction: row;
+}
+.home-page{
+    display: flex;
+    flex-direction: column;
+}
+/* ::ng-deep .mat-pseudo-checkbox{ display: none !important; } */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.filter-butt {
+  position: absolute;
+  top: 85px;
+  left: 15px;
+  z-index: 20;
+}
+
+
+@media only screen and (max-width: 600px) {
+  #menu-container {
+    /*transition: display .5s;*/
+    display: flex;
+    flex-direction: column;
+  }
+}

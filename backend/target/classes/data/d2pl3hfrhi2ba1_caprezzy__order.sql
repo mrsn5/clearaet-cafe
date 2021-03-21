@@ -1,0 +1,1 @@
+INSERT INTO caprezzy._order (uid, order_time, ready_time, preferences, client_uid, total, paid, order_state, payment_state, payment_id, pref_time) VALUES (47, '2020-04-20 13:46:14.497000', null, '', 7, 611, 0, 'in_check', 'not_paid', '389ad395-3514-4333-9816-cede293c4cd9', null);

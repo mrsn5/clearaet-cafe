@@ -1,0 +1,6 @@
+INSERT INTO caprezzy._user (uid, full_name, mail, phone, password, role) VALUES (3, 'San Nguyen', 'mr.sn5.kma@gmail.com', '+380985175152', '$2a$10$22VicH5T6LBHhi7ejeTOa.E1nlmBW2WkCMVqNNrWUInfMwpON9jd6', 'user');
+INSERT INTO caprezzy._user (uid, full_name, mail, phone, password, role) VALUES (7, 'Admin', 'admin@gmail.com', '+380980000000', '$2a$10$1xJ8jybuhTahqHMIUOOXVOI0KfKabPkiNnCuAlSQPlMyDbdp8YWPC', 'admin');
+INSERT INTO caprezzy._user (uid, full_name, mail, phone, password, role) VALUES (12, 'Hohoho Santa', 'hohoho@gmail.com', '+380980000010', '$2a$10$3gM4qRGU3k/eoUAOw/lkNOIHw02.2BAR8FKIVcnaLPNwy/4bUYNNW', 'user');
+INSERT INTO caprezzy._user (uid, full_name, mail, phone, password, role) VALUES (29, 'San Nguyen', 'mr.sn5@icloud.com', '+380985175159', '$2a$10$cuxiCbieamPAfUE3Y4KqHO9IJG0OdEeACHqADxPlg2OLu0CKKNqBS', 'user');
+INSERT INTO caprezzy._user (uid, full_name, mail, phone, password, role) VALUES (30, 'Sofi Yaremenko', 'sofia@yaremenko.ws', '+380973360447', '$2a$10$3A.5M5c/8iFM8oZaICxHMO1rxofwxYONvfpFCJiy3lf7TVsq7mlDC', 'user');
+INSERT INTO caprezzy._user (uid, full_name, mail, phone, password, role) VALUES (31, 'Stanislav Telizhenko', 'stas.telizhenko@gmail.com', '+380506261819', '$2a$10$aVE.x/.eIWkj2gdJ500aBeGNFNmcmNJuxSyfdYxYCqrZO1rfj3os6', 'user');
